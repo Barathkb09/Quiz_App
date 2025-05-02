@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="countdown"></div>
+    <div id="quiz">
+        <!-- Quiz questions and options go here -->
+    </div>
+
+    <script>
+        var countdownTime = 30;
+        function updateCountdown() {
+            var countdownElement = document.getElementById('countdown');
+            countdownElement.innerHTML = "Time Left: " + countdownTime + "s";
+            countdownTime--;
+            if (countdownTime < 0) {
+                clearInterval(timer);
+                countdownElement.innerHTML = "Time's Up!";
+            }
+        }
+        var timer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
